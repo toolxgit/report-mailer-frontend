@@ -3,7 +3,7 @@ import { UsersListing } from 'js/components/customer/components/users/listing';
 
 export const portalRoutes = [
     {
-        path: "/customer/users",
+        path: "/customer/home",
         component: UsersListing
     },
     {

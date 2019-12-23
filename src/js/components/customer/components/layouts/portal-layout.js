@@ -3,7 +3,7 @@ import { portalRoutes } from "js/routes/customer/portal";
 import { Redirect, Route, Switch } from "react-router-dom";
 // import { connect } from 'react-redux';
 //import { Spinner } from 'reactstrap';
-//import { Header } from "js/components/customer/components/layouts/components/header";
+import { SideBar } from "js/components/customer/components/layouts/components/sidebar";
 // import { authActions } from 'js/actions';
 
 const switchRoutes = (
@@ -29,7 +29,7 @@ export const PortalLayout = (props) => {
         <div>
             <div style={{ textAlign: "center" }}>
             </div>
-
+            <SideBar />
             <div className="global-content">
                 <div>
                     {switchRoutes}
