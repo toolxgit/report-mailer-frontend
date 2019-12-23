@@ -3,7 +3,8 @@ import React from 'react';
 // import { show } from 'redux-modal';
 // import { connect } from 'react-redux';
 // import { authActions } from 'js/actions';
-import DocumentTitle from 'react-document-title';
+import { Card } from '@shopify/polaris';
+
 
 export const UsersListing = (props) => {
     // const [params] = useState({ page: null, sort: null })
@@ -12,11 +13,14 @@ export const UsersListing = (props) => {
     //     // eslint-disable-next-line react-hooks/exhaustive-deps
     // }, [params]);
     return (
-        <DocumentTitle title='Users'>
-            <p>hello shopify++++++++++=</p>
-        </DocumentTitle>
+        <Card title="Online store dashboard" sectioned>
+            <p>View a summary of your online store’s performance.</p>
+        </Card>
     );
 }
+
+
+
 
 // const mapStateToProps = state => ({
 //     user: state.user,
