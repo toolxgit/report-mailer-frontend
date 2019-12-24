@@ -26,13 +26,13 @@ export const PortalLayout = (props) => {
     // }, []);
 
     return (
-        <div>
-            <div style={{ textAlign: "center" }}>
-            </div>
+        <div className="base-container">
             <SideBar />
             <div className="global-content">
-                <div>
-                    {switchRoutes}
+                <div className="global-datawrap flex-grow-1 d-flex flex-column">
+                    <div className="global-datawrap__inner">
+                        {switchRoutes}
+                    </div>
                 </div>
             </div>
         </div>

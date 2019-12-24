@@ -9,3 +9,26 @@
     background-color: $rm-white;
     padding: 40px 0;
 }
+
+.base-container{
+    width: 100%;
+    float: left;
+}
+
+.global-content {
+    width: calc(100% - 280px);
+    position: relative;
+    float: left;
+    z-index: 99;
+    left: 280px;
+}
+
+@media (max-width: 991.98px) {
+    .global-content {
+        width: calc(100% - 0px);
+        left: 0;
+    }
+    .global-datawrap__inner {
+        padding: 25px 15px;
+    }
+}
