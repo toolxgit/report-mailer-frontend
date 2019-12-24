@@ -1,11 +1,11 @@
-import { Home } from 'js/components/customer/components/home/home';
+import { Dashboard } from 'js/components/customer/components/dashboard/dashboard';
 import { ReportSettings } from 'js/components/customer/components/report-settings/report-settings';
 
 
 export const portalRoutes = [
     {
-        path: "/customer/home",
-        component: Home
+        path: "/customer/dashboard",
+        component: Dashboard
     },
     {
         path: "/customer/report-settings",
