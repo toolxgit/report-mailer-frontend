@@ -4,13 +4,16 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.global-datawrap__inner{
+    background-color: #f5f5f5;
+}
 .home-graph
 {
     margin-top: 2vw;
     background-color: yellowgreen;
 }
 .Polaris-Card__Section{
-    background-color: green;
+    background-color: rgb(255, 255, 255);
 }
 @media only screen and (max-width: 1200px) and (min-width: 992px)  {
 
