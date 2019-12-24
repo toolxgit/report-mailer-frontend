@@ -9,3 +9,37 @@
     margin-top: 2vw;
     background-color: yellowgreen;
 }
+.Polaris-Card__Section{
+    background-color: green;
+}
+@media only screen and (max-width: 1200px) and (min-width: 992px)  {
+
+    .home-graph
+    {
+        margin-top: 4vw;
+    }
+
+}
+
+@media only screen and (max-width: 991px) and (min-width: 964px) 
+ {
+    .home-graph
+    {
+        margin-top: 6vw;
+    }
+
+}
+@media only screen and (max-width: 963px) and (min-width: 600px)  {
+    .home-graph
+    {
+        margin-top: 8vw;
+    }
+}
+@media only screen and (max-width: 600px) 
+{
+    .home-graph
+    {
+        margin-top: 11vw;
+    }
+}
+
