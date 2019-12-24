@@ -1,10 +1,9 @@
-import { UsersListing } from 'js/components/customer/components/users/listing';
-
+import { Home } from 'js/components/customer/components/home/home';
 
 export const portalRoutes = [
     {
         path: "/customer/home",
-        component: UsersListing
+        component: Home
     },
     {
         path: "/",

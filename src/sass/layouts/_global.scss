@@ -1,3 +1,14 @@
+
+html, body { 
+    margin:0; 
+    padding:0; 
+    height:100%; 
+  }
+
+.global-content {
+    position: relative;
+    margin-top: 100px;
+}
 .generic-page-header {
     margin-bottom: 7px;
     min-height: 36px;
@@ -8,6 +19,11 @@
 .generic-page-header .back-link {
     white-space: nowrap;
 }
+.global-datawrap__inner{
+    height: 100vh;
+    // background-color: red;
+    margin-top: -9vw;
+
 .page-wrap {
     display: flex;
     flex-direction: column;
