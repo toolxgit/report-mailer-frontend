@@ -3,10 +3,10 @@ import { Bar } from 'react-chartjs-2';
 
 const state = {
     labels: ['January', 'February', 'March',
-        'April', 'May'],
+        'April', 'May', 'June', 'July', 'August', 'Septmeber', 'October', 'November', 'December'],
     datasets: [
         {
-            label: 'Rainfall',
+            label: 'Revenue',
             backgroundColor: 'rgba(75,192,192,1)',
             borderColor: 'rgba(0,0,0,1)',
             borderWidth: 2,
@@ -23,12 +23,12 @@ export const GraphComponent = (props) => {
                 options={{
                     title: {
                         display: true,
-                        text: 'Average Rainfall per month',
+                        text: 'Sales Graph',
                         fontSize: 20
                     },
                     legend: {
                         display: true,
-                        position: 'right'
+                        position: 'bottom'
                     }
                 }}
             />

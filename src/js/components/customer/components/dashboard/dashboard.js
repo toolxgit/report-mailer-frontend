@@ -1,7 +1,8 @@
 import React from 'react'
 import CardComponent from 'js/components/customer/components/card/card';
 import { GraphComponent } from './graph-component';
-import { Card } from '@shopify/polaris'
+import { Card } from '@shopify/polaris';
+import SelectExample from 'js/components/customer/components/select/select';
 
 
 export const Dashboard = (props) => {
@@ -17,6 +18,9 @@ export const Dashboard = (props) => {
                 <CardComponent name="Page Views" />
                 <CardComponent name="Revenue Today" />
                 <CardComponent name="Revenue This Month" />
+            </div>
+            <div className="dashboard-filter">
+                <SelectExample />
             </div>
             <div className="home-graph">
                 <Card>

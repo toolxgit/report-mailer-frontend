@@ -55,7 +55,8 @@
 }
 .global-datawrap__inner {
     padding: 25px 33px;
-    height: 90vh;
+    height: auto;
+    min-height: 100vh;
 }
 a:hover {
     text-decoration: none;
