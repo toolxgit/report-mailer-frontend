@@ -1,0 +1,11 @@
+.global-content {
+    position: relative;
+    margin-top: 100px;
+}
+.global-datawrap {
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: $rm-white;
+    padding: 40px 0;
+}
