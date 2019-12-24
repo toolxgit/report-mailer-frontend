@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import moment from 'moment';
 import {
     Collapse,
     Navbar,
@@ -10,7 +9,6 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    Button,
 } from 'reactstrap';
 
 export const Header = () => {
