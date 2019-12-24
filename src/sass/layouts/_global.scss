@@ -1,32 +1,65 @@
-.global-content {
+.generic-page-header {
+    margin-bottom: 7px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.generic-page-header .back-link {
+    white-space: nowrap;
+}
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    // min-height: 100vh;
+}
+.page-head {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    color: #2F2F2F;
+    margin: 8px 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.generic-header--select{
     position: relative;
-    margin-top: 100px;
+    float: left;
+    margin-right:10px;
+    width:200px;
+    .react-select__control {
+        min-height: 38px !important;
+    }
+    @media( max-width:767.98px){
+        width: 100%;
+        margin-right:0px;
+        margin-bottom: 20px;
+    }
 }
-.global-datawrap {
-    position: relative;
-    min-height: 100vh;
-    max-width: 100%;
-    background-color: $rm-white;
-    padding: 40px 0;
-}
-.global-datawrap__inner{
-    height: 100vh;
-    // background-color: red;
-    margin-top: -11vw;
-
-}
-
 .base-container{
     width: 100%;
     float: left;
 }
-
 .global-content {
     width: calc(100% - 280px);
     position: relative;
     float: left;
     z-index: 99;
     left: 280px;
+}
+.global-datawrap {
+    padding-top: 0px;
+    position: relative;
+    // min-height: 100vh;
+    max-width: 100%;
+}
+.global-datawrap__inner {
+    padding: 25px 33px;
+}
+a:hover {
+    text-decoration: none;
 }
 
 @media (max-width: 991.98px) {
@@ -37,4 +70,201 @@
     .global-datawrap__inner {
         padding: 25px 15px;
     }
+}
+@media (max-width: 767.98px) {
+    .generic-page-header{
+
+        .btn-outline-secondary{
+            margin-bottom: 10px;
+        }
+        .btn-primary{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    .generic-page-header{
+        display: block;
+        .btn-outline-secondary{
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .btn-primary{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.badge{
+    border-radius: 0px;
+    position: relative;
+    top:-1px;
+}
+.badge-warning{
+    background-color: $mdh-yellow;
+}
+.mdh-sm-box {
+    padding: 5px;
+    background-color: $mdh-yellow;
+}
+.section-heading{
+    font-size: 18px;
+    font-weight: 600;
+    color: $mdh-grey;
+    font-family: "Raleway", sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: solid 1px $mdh-grey150;
+}
+
+
+
+
+
+
+.mdh-card--disabled{
+    opacity: .5;
+}
+.mdh-card--disabled btn{
+    opacity: 1;
+}
+.mdh-card {
+    background-color: $mdh-white;
+    padding: 0;
+    border-radius: 4px;
+    margin-top: 11px;
+    border: 1px solid rgba(204, 204, 204, 0.6);
+    display: flex;
+    flex-direction: column;
+    transition: height 200ms ease;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.0533571);
+}
+.mdh-card > div{
+    -webkit-animation: fadein 0.3s ease-in-out;
+    animation: fadein 0.3s ease-in-out;
+}
+.mdh-card__head {
+    border-bottom: 2px solid #ededed;
+    padding: 20px 25px 10px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.mdh-card__head--label {
+    font-size: 17px;
+    font-family: "Raleway", sans-serif;
+    color: $mdh-grey;
+    margin: 0;
+
+    i{
+        margin-right:10px;
+        top: -2px;
+        position: relative;
+    }
+}
+
+
+.mdh-global-card-light-blue {
+    background: rgba(0, 204, 153, 0.0282495);
+    border: 1px solid rgba(19, 120, 120, 0.153759);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.mdh-global-card-light-blue-head {
+    padding: 20px 25px 22px 25px;
+
+    h6 {
+        font-size: 14px;
+        margin-bottom: 0;
+        color: $mdh-grey-200;
+        line-height: 25px;
+    }
+    h4 {
+        font-size: 16px;
+        margin-bottom: 0;
+        color: $mdh-black;
+    }
+}
+.mdh-global-card-light-blue-head-Social {
+    padding: 17px 25px;
+
+    h6 {
+        font-size: 14px;
+        margin-bottom: 0;
+        color: $mdh-grey-200;
+    }
+    h4 {
+        font-size: 16px;
+        margin-bottom: 0;
+        color: $mdh-black;
+    }
+}
+.mdh-global-card-light-blue-head-Social--btn {
+    padding-right: 25px;
+}
+.custom-checkbox--fav{
+    float: right;
+    top:4px;
+    .custom-control-label::before{
+        top:1px;
+    }
+    .custom-control-label::after {
+        top: 6.4px !important;
+        left: -19.9px !important;
+    }
+}
+
+/* Signature Pad Style*/
+
+.mdh-signature-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .mdh-signature__pad-wrap {
+        margin-top:20px;
+        margin-bottom: 40px;
+    }
+    .mdh-signature__pad {
+        background-color: #dffcf5;
+        border-radius: 5px;
+        padding: 18px 15px;
+        width: 250px;
+        height: 76px;
+    }
+    .mdh-signature__pad-text {
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #228180;
+        margin-bottom: 0;
+        font-weight: 600;
+    }
+    .mdh-signature__pad-sub-text {
+        color: #228180;
+        font-size: 14px;
+    }
+    .mdh-signature__pad-sub-text-link {
+        color: #228180;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: #228180;
+        }
+    }
+}
+.mdh-signature__pad-wrap::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    top: 10px;
+    background-color: #828282;
+    position: relative;
+    display: block;
+}
+.my-patients-tabs .nav-item .nav-link{
+    padding: 15px 30px !important;
 }

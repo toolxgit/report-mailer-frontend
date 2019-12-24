@@ -52,7 +52,7 @@ background: #00cc99 ;
 .sidebar__portal-text {
     position: relative;
     text-align: center;
-    color: $rm-green60;
+    color: $mdh-green300;
     margin-bottom: 0;
     padding: 6px 0 14px 0;
     font-size: 14px;
@@ -63,7 +63,7 @@ background: #00cc99 ;
    width: 100%;
     left: 0;
     bottom:-15px;
-   background-color: $rm-green60;
+   background-color: $mdh-grey100;
    opacity: .6;
   position: absolute;
 }
@@ -84,7 +84,7 @@ background: #00cc99 ;
 
 .sidebar__list--text {
     font-size: 15px;
-    color: $rm-green60 !important;
+    color: $mdh-grey-200 !important;
     cursor: pointer;
     width: 100%;
     display: block;
@@ -107,8 +107,8 @@ background: #00cc99 ;
 .sidebar .active path,
 .sidebar .active rect {
     text-decoration: none;
-    color: $rm-green60 !important;
-    fill: $rm-green60 !important;
+    color: $mdh-green400 !important;
+    fill: $mdh-green300 !important;
 }
 
 .sidebar__list--text:focus,
@@ -137,18 +137,18 @@ background: #00cc99 ;
 
 .sidebar__footer--color {
     padding: 4px 0;
-    background-color: $rm-green60;
+    background-color: $mdh-green300;
 
 }
 .color-yellow{
-    color: $rm-green60;
+    color: $mdh-yellow;
 }
 .bg-yellow{
-    background-color: $rm-green60;
+    background-color: $mdh-yellow;
 }
 .color-dark-green{
-    color: $rm-green60;
+    color: $mdh-green600;
 }
 .bg-dark-green{
-    background-color: $rm-green60;
+    background-color: $mdh-green600;
 }
