@@ -9,8 +9,9 @@
 }
 .home-graph
 {
-    margin-top: 2vw;
-    background-color: yellowgreen;
+   // margin-top: 2vw;
+    padding-top: 2vw;
+    margin-bottom: 3vw;
 }
 .Polaris-Card__Section{
     background-color: rgb(255, 255, 255);
@@ -19,7 +20,7 @@
 
     .home-graph
     {
-        margin-top: 4vw;
+        padding-top: 3vw;
     }
 
 }
@@ -35,14 +36,28 @@
 @media only screen and (max-width: 963px) and (min-width: 600px)  {
     .home-graph
     {
-        margin-top: 8vw;
+        padding-top: 5vw;
+    }
+
+    .dashboard-filter{
+        padding-top: 4vw;
     }
 }
 @media only screen and (max-width: 600px) 
 {
     .home-graph
     {
-        margin-top: 11vw;
+        padding-top: 7vw;
     }
+
+    .dashboard-filter{
+        padding-top: 8vw;
+    }
+}
+
+.dashboard-filter{
+    justify-content: flex-end;
+    margin-top: 5vw;
+    display: flex;
 }
 
