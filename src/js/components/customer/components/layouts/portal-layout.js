@@ -3,7 +3,9 @@ import { portalRoutes } from "js/routes/customer/portal";
 import { Redirect, Route, Switch } from "react-router-dom";
 // import { connect } from 'react-redux';
 //import { Spinner } from 'reactstrap';
-//import { Header } from "js/components/customer/components/layouts/components/header";
+import { SideBar } from "js/components/customer/components/layouts/components/sidebar";
+import { Header } from "js/components/customer/components/layouts/components/header";
+
 // import { authActions } from 'js/actions';
 
 const switchRoutes = (
@@ -26,13 +28,14 @@ export const PortalLayout = (props) => {
     // }, []);
 
     return (
-        <div>
-            <div style={{ textAlign: "center" }}>
-            </div>
-
+        <div className="base-container">
+            <SideBar />
             <div className="global-content">
-                <div>
-                    {switchRoutes}
+                <Header />
+                <div className="global-datawrap flex-grow-1 d-flex flex-column">
+                    <div className="global-datawrap__inner">
+                        {switchRoutes}
+                    </div>
                 </div>
             </div>
         </div>

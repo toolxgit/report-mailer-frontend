@@ -1,0 +1,56 @@
+.card-box{
+    width: 23vw;
+    height: 10vw ;
+    margin-top: 2vw ;
+}
+
+.card-box h2{
+    padding: 1vw;
+}
+
+.card-box p
+{
+    padding: 1vw;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 992px)  
+{
+    .card-box{   
+        margin-top: 4vw ;
+        width: 30vw;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 964px)  {
+        .card-box
+        {
+           margin-top: 6vw ;
+           width: 30vw;
+        }
+}
+@media only screen and (max-width: 963px) and (min-width: 768px)  {
+    .card-box{
+        width: 45vw;
+        margin-top: 7vw ;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 601px)   {
+    .card-box{
+        width: 65vw;
+        height: 12vw ;
+        margin-top: 10vw ;
+    }
+}
+
+@media only screen and (max-width: 600px) 
+{
+    .card-box{
+        width: 80vw;
+        height: 14vw ;
+        margin-top: 10vw ;
+
+    }
+}
+
+

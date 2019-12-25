@@ -1,0 +1,46 @@
+
+// Body
+$body-bg: #fff;
+
+// Typography
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+$alpha5: .7;
+$alpha1: .1;
+$alpha05: .05;
+// MDH Theme
+$mdh-green100: #ebfbf7;
+$mdh-green200: #dbf4ee;
+$mdh-green220: #E5F9F4;
+$mdh-green250: #E6FAF5;
+$mdh-green300: #00cc99;
+$mdh-green400: #2a8080;
+$mdh-green500: rgb(19,120,120);
+$mdh-green600: #137878;
+$mdh-red: #F33333;
+$mdh-red-light: rgb(230,60,60);
+$mdh-yellow: #DDE63C;
+$mdh-yellow-light:#F7F8E7;
+$mdh-yellow-dark: #787D21;
+$mdh-white: #ffffff;
+$mdh-white100: #FCFCFC;
+
+$mdh-grey5: #f8f8f8;
+$mdh-grey10: #D1D1D1;
+$mdh-grey20: #4E5E6D;
+$mdh-grey50: #D6D6D6;
+$mdh-grey100: #D8D8D8;
+$mdh-grey150:#C5C5C5;
+$mdh-grey-200: #888888;
+$mdh-grey-250: #E5E7E9;
+$mdh-grey: #333333;
+$mdh-black: #000000;
+
+
+
+$mdh-lime: #dde63c;
+$mdh-green-alpha05: rgba($mdh-green600, $alpha05);
+$mdh-green-alpha5: rgba($mdh-green500, $alpha5);
+$mdh-green-alpha1: rgba($mdh-green500, $alpha1);
+$mdh-red-alpha7: rgba($mdh-red-light, $alpha1);
