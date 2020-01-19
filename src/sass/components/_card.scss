@@ -1,16 +1,23 @@
 .card-box{
     width: 23vw;
-    height: 10vw ;
+    height: 13vw ;
     margin-top: 2vw ;
 }
 
 .card-box h2{
     padding: 1vw;
 }
-
+.img-container-dashboard{
+    img{
+        width: 4vw;
+    }
+    width: 22vw;
+    display:flex;
+}
 .card-box p
 {
     padding: 1vw;
+    font-size: 1.2vw;
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 992px)  
@@ -47,7 +54,7 @@
 {
     .card-box{
         width: 80vw;
-        height: 14vw ;
+        height: 25vw ;
         margin-top: 10vw ;
 
     }

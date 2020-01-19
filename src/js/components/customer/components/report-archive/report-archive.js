@@ -1,6 +1,11 @@
 import React from 'react';
-import { Card, DataTable, Page, Layout } from '@shopify/polaris';
+import { Card, DataTable, Page, Layout, TextStyle } from '@shopify/polaris';
 import CardComponent from 'js/components/customer/components/card/card';
+import revenue from "./images/revenue.png";
+import sale from "./images/sale.png";
+
+
+
 
 export const ReportArchive = (props) => {
     return (
@@ -10,30 +15,33 @@ export const ReportArchive = (props) => {
                     <Card sectioned>
                         <div className="section1" >
                             <div>
-                                <h1 className="header">DAILY REPORT #023</h1>
+                                <h3 className="header1">invoice #023</h3>
+                                <h1 className="header2">DAILY REPORT </h1>
                                 <div
                                     className="alignment1"
                                     style={{ borderRadius: "0vw", backgroundColor: "white" }}
                                 >
-                                        <h2></h2>
-                                        <p>Quantity</p>
-                                        <p>Price</p>
+                                    <h2></h2>
+                                    <p style={{ fontWeight: "bolder" }}>Quantity</p>
+                                    <p style={{ fontWeight: "bolder" }}>Price</p>
                                 </div>
-                                    <div className="alignment1">
-                                        <h2 >Revenue</h2>
-                                        <p>280</p>
-                                        <p>$812</p>
-                                    </div>
+                                <div className="alignment1">
+                                    <div className="img-container"><img  src={revenue} /></div>
+                                    <h2 >Revenue</h2>
+                                    <p>280</p>
+                                    <p>$812</p>
+                                </div>
                                 <div className="inner-content">
-                                    <li>week:$239.00     $435.00(Same week last year)</li>
+                                    <li>week: $239.00<TextStyle variation="subdued"> (Same week last year: $435.00)</TextStyle> </li>
                                     <li>month:$239.00 $435.00(Same month last year)</li>
-                                    <li>year:$239.00 $435.00(Same year last year)</li>
+                                    <li>year:$239.00 $435.00(last year)</li>
                                 </div>
-                                    <div className="alignment1">
-                                        <h2 >Sales</h2>
-                                        <p>280</p>
-                                        <p>$812</p>
-                                    </div>
+                                <div className="alignment1">
+                                <div className="img-container"><img className="sale-img" src={sale} /></div>
+                                    <h2 >Sales</h2>
+                                    <p>280</p>
+                                    <p>$812</p>
+                                </div>
                                 <div className="inner-content">
                                     <li>week:$239.00     $435.00(Same week last year)</li>
                                     <li>month:$239.00 $435.00(Same month last year)</li>

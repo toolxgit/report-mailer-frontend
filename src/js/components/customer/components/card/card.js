@@ -5,7 +5,10 @@ function CardComponent(props) {
         <div className="card-box">
             <Card sectioned >
                 <div >
-                    <h2 >{props.name}</h2>
+                    <div className="img-container-dashboard"><img src={props.image} />
+                    <h2 >{props.name}</h2>    
+                     </div> 
+                    
                     <p >$24,68000.00</p>
                 </div>
 
