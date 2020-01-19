@@ -3,6 +3,7 @@ import { ReportSettings } from 'js/components/customer/components/report-setting
 import { ReportArchive } from 'js/components/customer/components/report-archive/report-archive';
 
 
+
 export const portalRoutes = [
     {
         path: "/customer/dashboard",
@@ -14,6 +15,7 @@ export const portalRoutes = [
         path: "/customer/report-settings",
         component: ReportSettings
     },
+
     {
         path: "/customer/report-archive",
         component: ReportArchive
