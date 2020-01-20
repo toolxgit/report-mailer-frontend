@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, DataTable, Page, Layout, TextStyle } from '@shopify/polaris';
-import CardComponent from 'js/components/customer/components/card/card';
+import { Card,  Page, Layout, TextStyle } from '@shopify/polaris';
 import revenue from "./images/revenue.png";
 import sale from "./images/sale.png";
 
