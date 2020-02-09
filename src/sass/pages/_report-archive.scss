@@ -1,0 +1,121 @@
+.bottom-part{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    align-content: flex-start;
+    align-items: baseline;
+}
+.one ,.two{
+    width: 40vw;
+    padding-left: 2vw;
+    font-size: 1vw;
+
+}
+#text{
+    text-align: center;
+    padding-top: 2vw;
+    letter-spacing: .1vw;
+    font-weight: bolder;
+    font-size: 1.4vw;
+}
+.Polaris-DataTable__Cell--numeric {
+    text-align: left;
+}
+.header1{
+    padding-top: 3vw;
+    margin: 0 auto;
+    text-align: center;
+}
+.header2{
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.img-container{
+    img{
+        width: 2.3vw;
+        margin: 1vw;
+    }
+    width: 3vw;
+    margin: 1vw;
+}
+ .inner-content{
+    padding-left: 9vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    line-height: 2.5vw;
+  }
+  .inner-content li{
+      font-size: 1vw;
+
+  }
+
+
+  .alignment1{
+    display: flex;
+    height: 6vw;
+    margin: 0 auto;
+    border-radius: 2vw;
+    background-color:  #25c9a05b;
+  }
+   span{
+     color:white;
+   }
+  .alignment1 h2{
+    color: rgb(10, 10, 10);
+    flex-grow: 4; 
+    padding-left: 3vw;
+    width: 5vw;
+    justify-items: flex-start;
+    display: flex;
+    font-weight: bolder;
+    align-items: center;
+    font-size: 1.5vw;
+    letter-spacing: .02vw;
+  
+  
+  }
+  .alignment1 p{
+    flex-grow: 2;
+    display: flex;
+    width: 2vw;
+   font-size: 1.1vw;
+    justify-items: flex-start;
+   align-items: center;
+  
+  }
+  @media only screen and (max-width: 600px) 
+  {
+    .inner-content {
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+        line-height: 7vw;
+    }
+    .alignment1 {
+        height: 17vw;
+        width: 82vw;
+    }
+    .inner-content li {
+        font-size: 3vw;
+    }
+    .alignment1 p{
+        font-size: 3.1vw;
+    }
+    .alignment1 h2{
+        font-size: 4.5vw;
+        padding-left: 9vw;
+    }
+        .one, .two {
+            font-size: 3vw;
+        }
+        .img-container img {
+            width: 6.5vw;
+            margin: 3vw;
+        }
+        #text {
+            padding-top: 7vw;
+            font-size: 5.4vw;
+        }
+    }
+
