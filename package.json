@@ -29,11 +29,11 @@
     "redux-saga": "^1.1.3"
   },
   "scripts": {
-    "start": "serve -s build",
+    "start": "react-scripts",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-local": "react-scripts start"
+    "deploy": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
