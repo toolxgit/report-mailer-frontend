@@ -3,22 +3,26 @@ import { authServices } from 'js/services';
 import { history } from 'js/helpers';
 import { authConstants, configConstants } from 'js/constants';
 
-function* authLogin(action) {
+function* getToken(action) {
+    console.log('11111111111')
     try {
         const route = action.route;
         const token_name = configConstants.USER_TOKEN_NAME
-        const response = yield (authServices.login(action.payload)).then(response => response);
+        console.log('222222222')
+        const response = yield (authServices.getToken()).then(response => response);
+        console.log('response++++++++', response)
 
-        yield put({ type: authConstants.LOGIN_SUCCESS, payload: response, route });
-        yield localStorage.setItem(token_name, response.token);
+        yield put({ type: authConstants.GET_TOKEN_SUCCESS, payload: response, route });
+        yield localStorage.setItem(token_name, response.accessToken);
         yield history.push('/');
     }
     catch (error) {
-        yield put({ type: authConstants.LOGIN_FAILURE, error: error });
+        console.log('errrr++++++++', error)
+        yield put({ type: authConstants.GET_TOKEN_FAILURE, error: error });
     }
 }
 
 export default function* authSaga() {
-    yield takeLatest(authConstants.LOGIN_REQUEST, authLogin);
+    yield takeLatest(authConstants.GET_TOKEN_REQUEST, getToken);
 }
 

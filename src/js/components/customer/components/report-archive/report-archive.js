@@ -1,16 +1,34 @@
-import React from 'react';
-import { Card,  Page, Layout, TextStyle } from '@shopify/polaris';
+import React, { useState, useCallback } from 'react';
+import { Card, Page, Layout, TextStyle } from '@shopify/polaris';
 import revenue from "./images/revenue.png";
 import sale from "./images/sale.png";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import classnames from 'classnames';
+import SelectExample from 'js/components/customer/components/select/select';
 
 
 
 
 export const ReportArchive = (props) => {
+    let [state, setState] = useState({ day: '', month: '', year: '' });
+
+    const [selectedDates, setSelectedDates] = useState({});
+
     return (
-        <Page >
+        <Page>
             <Layout>
                 <Layout.Section>
+                    <div className='custom-react-select'>
+                        <DatePicker
+                            className={classnames('form-control react-dob-input')}
+                            selected={state.date ? state.date : null}
+                            onChange={(e) => this.handleChange(e, 'date')}
+                            maxDate={new Date()}
+                            showYearDropdown
+                            placeholderText='date picker'
+                        />
+                    </div>
                     <Card sectioned>
                         <div className="section1" >
                             <div>
@@ -20,12 +38,11 @@ export const ReportArchive = (props) => {
                                     className="alignment1"
                                     style={{ borderRadius: "0vw", backgroundColor: "white" }}
                                 >
-                                    <h2></h2>
                                     <p style={{ fontWeight: "bolder" }}>Quantity</p>
                                     <p style={{ fontWeight: "bolder" }}>Price</p>
                                 </div>
                                 <div className="alignment1">
-                                    <div className="img-container"><img  src={revenue} /></div>
+                                    <div className="img-container"><img src={revenue} alt="" /></div>
                                     <h2 >Revenue</h2>
                                     <p>280</p>
                                     <p>$812</p>
@@ -36,7 +53,7 @@ export const ReportArchive = (props) => {
                                     <li>year:$239.00 $435.00(last year)</li>
                                 </div>
                                 <div className="alignment1">
-                                <div className="img-container"><img className="sale-img" src={sale} /></div>
+                                    <div className="img-container"><img className="sale-img" src={sale} alt="" /></div>
                                     <h2 >Sales</h2>
                                     <p>280</p>
                                     <p>$812</p>

@@ -25,16 +25,11 @@ export function request(options) {
 
 
 //Get Route Based API URL
-function getRouteApiUrl(route) {
-    return process.env.REACT_APP_API_URL + route + '/';
+function getRouteApiUrl() {
+    return process.env.REACT_APP_API_URL + '/';
 }
-function getTokenName(route) {
-    if (route === 'admin') {
-        return configConstants.ADMIN_TOKEN_NAME;
-    }
-    else {
-        return configConstants.CUSTOMER_TOKEN_NAME;
-    }
+function getTokenName() {
+    return configConstants.USER_TOKEN_NAME;
 }
 
 
@@ -69,9 +64,11 @@ function requestOptions(method = 'GET', url = null, params = null, is_authentica
         url: full_url + url
     };
     if (is_authenticated) {
-        let token = localStorage.getItem(getTokenName(route));
+        let token = localStorage.getItem(getTokenName());
         if (token) {
-            requestOptions.headers.Authorization = 'Bearer ' + token;
+            // requestOptions.headers.Authorization = 'Bearer ' + token;
+            requestOptions.headers['secret-token'] = token;
+
         }
     }
 
@@ -92,12 +89,7 @@ function requestOptions(method = 'GET', url = null, params = null, is_authentica
 function handleError(route, error) {
     if (error && error.response) {
         if (error.response.status === 401) {
-            if (route === "admin") {
-                history.push("/");
-
-            } else {
-                history.push("/");
-            }
+            history.push("/");
         }
     }
 

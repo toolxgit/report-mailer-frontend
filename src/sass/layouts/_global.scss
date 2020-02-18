@@ -110,3 +110,63 @@ a:hover {
 .Polaris-Select__Input{
     padding: 12px;
 }
+
+
+.custom-react-time{
+    margin-bottom: 30px;
+}
+.react-time-select{
+    width: 100%;
+}
+.react-time-select .rc-time-picker-input{
+    height: 41px;
+    width: 100%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+}
+.rc-time-picker-panel{
+    width: 20.3% !important;
+    outline: none !important;
+    @media( max-width:767.98px){
+        width: 40% !important;
+    }
+}
+.rc-time-picker-panel-inner{
+    width: 100%;
+    top:3px;
+}
+.rc-time-picker-panel-input-wrap{
+    padding:9px 6px;
+}
+.rc-time-picker-panel-select{
+    width:33.33% !important;
+}
+.rc-time-picker-panel-select::-webkit-scrollbar {
+    width: 10px;
+}
+
+.rc-time-picker-panel-select::-webkit-scrollbar-thumb {
+    background-color: #b7d6d1;
+    border-radius: 50px;
+}
+
+.rc-time-picker-panel-select::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+.rc-time-picker-panel-select li{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+}
+.rc-time-picker-clear-icon{
+    display: none;
+}
+.rc-time-picker-panel-input{
+    font-size: 16px;
+}
