@@ -9,17 +9,17 @@ const initialState = {
 
 export function auth(state = initialState, action) {
     switch (action.type) {
-        case authConstants.LOGIN_REQUEST:
+        case authConstants.GET_TOKEN_REQUEST:
             return {
                 ...state,
                 login_request: true,
             };
-        case authConstants.LOGIN_SUCCESS:
+        case authConstants.GET_TOKEN_SUCCESS:
             return {
                 ...omit(state, 'login_request'),
                 login_success: true,
             };
-        case authConstants.LOGIN_FAILURE:
+        case authConstants.GET_TOKEN_FAILURE:
             return {
                 ...omit(state, 'login_request'),
                 login_success: false,

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { portalRoutes } from "js/routes/customer/portal";
 import { Redirect, Route, Switch } from "react-router-dom";
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 //import { Spinner } from 'reactstrap';
 import { SideBar } from "js/components/customer/components/layouts/components/sidebar";
 import { Header } from "js/components/customer/components/layouts/components/header";
 
-// import { authActions } from 'js/actions';
+import { authActions } from 'js/actions';
 
 const switchRoutes = (
     <Switch>
@@ -19,38 +19,43 @@ const switchRoutes = (
     </Switch>
 );
 
-export const PortalLayout = (props) => {
+const PortalLayout = (props) => {
 
-    // useEffect(() => {
-    //     props.getProfile();
-    //     props.getLookups();
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
+    useEffect(() => {
+        props.getToken();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
-        <div className="base-container">
-            <SideBar />
-            <div className="global-content">
-                <Header />
-                <div className="global-datawrap flex-grow-1 d-flex flex-column">
-                    <div className="global-datawrap__inner">
-                        {switchRoutes}
+        <>
+            {
+                props.auth && props.auth.login_success ?
+                    <div className="base-container">
+                        <SideBar />
+                        <div className="global-content">
+                            <Header />
+                            <div className="global-datawrap flex-grow-1 d-flex flex-column">
+                                <div className="global-datawrap__inner">
+                                    {switchRoutes}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    :
+                    <p>Unauthorized to access this account</p>
+            }
+        </>
     );
 }
 
-// const mapStateToProps = (state) => ({
-//     lookups: state.lookups,
-//     auth: state.auth
-// })
+const mapStateToProps = (state) => ({
+    auth: state.auth
+})
 
-// const mapDispatchToProps = (dispatch) => ({
-//     getProfile: () => dispatch(authActions.getProfile()),
-//     getLookups: () => dispatch(authActions.lookups())
-// });
+const mapDispatchToProps = (dispatch) => ({
+    getToken: () => dispatch(authActions.getToken()),
+    getLookups: () => dispatch(authActions.lookups())
+});
 
-// const connectedPortalLayout = connect(null, null)(PortalLayout);
-// export { connectedPortalLayout as PortalLayout }
+const connectedPortalLayout = connect(mapStateToProps, mapDispatchToProps)(PortalLayout);
+export { connectedPortalLayout as PortalLayout }

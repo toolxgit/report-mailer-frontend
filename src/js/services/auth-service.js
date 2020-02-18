@@ -1,14 +1,13 @@
 import { request } from "js/helpers/api";
 
 export const authServices = {
-    login
+    getToken
 };
 
-function login(params) {
+function getToken() {
     return request({
-        method: 'POST',
-        url: 'auth/login',
-        param: params,
+        method: 'GET',
+        url: 'get-token',
         is_authenticated: false,
         content_type: 'json',
     });

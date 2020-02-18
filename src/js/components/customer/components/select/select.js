@@ -1,23 +1,26 @@
-import React, {useCallback, useState} from 'react';
-import {Select} from '@shopify/polaris';
+import React, { useCallback, useState } from 'react';
+import { Select } from '@shopify/polaris';
 
-export default function SelectExample(props) {
+export default function SelectShopify(props) {
   const [selected, setSelected] = useState('today');
 
-  const handleSelectChange = useCallback((value) => setSelected(value), []);
+  const handleSelectChange = useCallback((value, key) => {
+    console.log('key_name+++++++++', key)
+    setSelected(value);
+    props.callBack(value, key);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const options = [
-    {label: 'Today', value: 'today'},
-    {label: 'Yesterday', value: 'yesterday'},
-    {label: 'Last 7 days', value: 'lastWeek'},
-  ];
-console.log("selected", selected);
+  console.log('selected+++++++', selected)
+
+
   return (
     <Select
       label={props.label}
-      options={options}
-      onChange={handleSelectChange}
+      options={props.options}
+      onChange={(e) => handleSelectChange(e, props.key_name)}
       value={selected}
+
     />
   );
 }
