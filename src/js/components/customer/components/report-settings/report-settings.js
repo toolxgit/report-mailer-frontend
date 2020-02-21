@@ -35,15 +35,17 @@ export const ReportSettings = () => {
                             onChange={(e) => setState({ ...state, 'email': e })}
                             value={state.email ? state.email : ''}
                         />
+                                                   <span className="label-tag">Weekly reports</span>
+
                         <div className="split">
                             <SelectShopify
-                                label="Weekly reports"
                                 callBack={(value, key) => setState({ ...state, [key]: value })}
                                 key_name="daily_report_day"
                                 options={weekly_days_lookups}
-                            />
-                            <div className="select-box-align">
-                                <TimePicker
+                                />
+                              
+                            <div className="select-box-align time-pick-align"   >
+                                <TimePicker  
                                     showSecond={false}
                                     className="react-time-select"
                                     use12Hours

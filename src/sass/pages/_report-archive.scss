@@ -5,10 +5,16 @@
     align-items: baseline;
 }
 .one ,.two{
+    h3{
+        margin-bottom: 1.5rem;
+    }
     width: 40vw;
     padding-left: 2vw;
     font-size: 1vw;
 
+}
+.react-datepicker__header {
+    width: 18 vw;
 }
 #text{
     text-align: center;
@@ -59,9 +65,7 @@
     border-radius: 2vw;
     background-color:  #25c9a05b;
   }
-   span{
-     color:white;
-   }
+  
   .alignment1 h2{
     color: rgb(10, 10, 10);
     flex-grow: 4; 
@@ -79,11 +83,66 @@
   .alignment1 p{
     flex-grow: 2;
     display: flex;
+    padding-left: 8vw;
     width: 2vw;
    font-size: 1.1vw;
     justify-items: flex-start;
    align-items: center;
   
+  }
+
+
+
+
+
+
+  //new
+  .time-pick-align{
+    margin-left: 2vw;
+    
+    
+}
+.label-tag{
+    font-size: 1.5rem;
+
+}
+
+.custom-react-select {
+    text-align: right;
+}
+.react-time-select .rc-time-picker-input {
+    width: 14vw;
+    height: 37px;
+    text-align: right;
+}
+
+
+.react-datepicker__header {
+    width: 15vw;
+}
+.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name
+{
+   
+    font-weight: 900;
+    margin: .5rem !important;
+}
+
+
+  @media only screen and (max-width: 963px) and (min-width: 600px)  {
+    .custom-react-select 
+    {
+                text-align: left;
+            }
+    .react-datepicker__header {
+        width: 23vw;
+    }
+            
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name
+    {
+
+         margin: .2rem !important;
+}   
+
   }
   @media only screen and (max-width: 600px) 
   {
@@ -117,5 +176,29 @@
             padding-top: 7vw;
             font-size: 5.4vw;
         }
+
+        //new
+
+        .react-datepicker__header {
+            width: 48vw;
+        }
+               
+        .custom-react-select 
+        {
+                    text-align: left;
+                }
+                
+        .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name
+        {
+   
+             font-weight: 900;
+             margin: .2rem !important;
+    }   
     }
 
+    .custom-react-select {
+    // text-align: right; 
+    padding-bottom: 1vw;     
+    padding-right: 2vw;
+  
+    }

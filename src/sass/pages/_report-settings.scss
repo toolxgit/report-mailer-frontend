@@ -1,5 +1,7 @@
 .split{
     display: flex;
+    align-items: baseline;
+
   }
   .report-settings-align{
       padding: 2vw;
@@ -9,20 +11,34 @@
         display: block;
         margin-bottom: 1vw;
     }  
-    .select-box-align{
-        display: block;
-        padding-left: 4vw;
-        padding-top: 1.4vw;
-    }
+  
     .select-box-align{
         margin-bottom: 1.3rem;
     }
    
-.adjust
-{
-color: white;    
+label{
+    font-size: 1.6rem;
 }
-#PolarisSelect2Label{
-color: white;
+// span{
+//     color: black!important;
+// }
+
+
+
+.Polaris-TextField {
+width: 26vw;
+}
+
+
+
+@media only screen and (max-width: 600px) 
+{
+    .Polaris-TextField {
+        width: 70vw;
+        }
+        .react-time-select .rc-time-picker-input {
+            width: 30vw;
+        }
+
 
 }

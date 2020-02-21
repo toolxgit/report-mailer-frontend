@@ -18,7 +18,8 @@ export const ReportArchive = (props) => {
     return (
         <Page>
             <Layout>
-                <Layout.Section>
+                <Layout.Section >
+                    <div className="whole-repo-archive-wrap">
                     <div className='custom-react-select'>
                         <DatePicker
                             className={classnames('form-control react-dob-input')}
@@ -65,8 +66,10 @@ export const ReportArchive = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </Card>
+                        </Card>
+                     </div>     
                 </Layout.Section>
+               
             </Layout>
             <Card>
                 <h3 id="text">Popular Products</h3>
