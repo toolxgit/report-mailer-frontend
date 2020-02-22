@@ -36,6 +36,11 @@
     padding-bottom: 2vw;
     margin: 0 auto;
     text-align: center;
+};
+
+.react-datepicker__input-container input{
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
 }
 
 .img-container{
@@ -114,6 +119,11 @@
     width: 14vw;
     height: 37px;
     text-align: right;
+    font-size: 2rem;
+}
+.react-datepicker__day-names, .react-datepicker__week {
+    white-space: nowrap;
+    font-size: 1.3rem;
 }
 
 
