@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormLayout, TextField, Card, Button } from '@shopify/polaris';
 import { Select } from '@shopify/polaris';
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import { apiServices } from 'js/services';
+import moment from 'moment';
 
-
-
-// import "./report-settings.css"
 
 export const ReportSettings = () => {
     let [state, setState] = useState({});
@@ -25,9 +23,23 @@ export const ReportSettings = () => {
         { label: 'Sunday', value: 'sunday' },
     ];
 
+    useEffect(() => {
+        apiServices.getReportSettings().then((response) => {
+            setState({ ...response });
+        }).catch((err) => setErrors(err));
+    }, []);
+
     const onSubmit = (e) => {
         e.preventDefault();
-        apiServices.reportSettings(state)
+
+        const details = {
+            ...state,
+            weekly_time: state.weekly_time ? state.weekly_time.format('H:m') : '',
+            daily_time: state.daily_time ? state.daily_time.format('H:m') : '',
+            monthly_time: state.monthly_time ? state.monthly_time.format('H:m') : '',
+        }
+
+        apiServices.updateReportSettings(details)
             .then((response) => { setConfirmMessage(response) })
             .catch((err) => setErrors(err));
     }
@@ -95,6 +107,7 @@ export const ReportSettings = () => {
                 <Button
                     textAlign="center"
                     onClick={(e) => onSubmit(e)}
+                    className="btn btn-secondary"
                 >
                     Save
                 </Button>

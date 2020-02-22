@@ -2,7 +2,9 @@ import { request } from "js/helpers/api";
 
 export const apiServices = {
     getDashboard,
-    reportSettings
+    updateReportSettings,
+    getReportSettings,
+    getReportArchive
 };
 
 function getDashboard() {
@@ -14,11 +16,30 @@ function getDashboard() {
     });
 }
 
-function reportSettings(params) {
+function updateReportSettings(params) {
     return request({
         method: 'POST',
         url: 'send-mail',
         content_type: 'json',
         param: params,
+    });
+}
+
+
+function getReportSettings() {
+    return request({
+        method: 'GET',
+        url: 'send-mail',
+        content_type: 'json',
+    });
+}
+
+
+function getReportArchive(params) {
+    return request({
+        method: 'GET',
+        url: 'send-mail',
+        content_type: 'json',
+        param: params
     });
 }
