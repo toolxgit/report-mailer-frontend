@@ -9,8 +9,8 @@ export const portalRoutes = [
         path: "/customer/dashboard",
         component: Dashboard
     },
-  
-    
+
+
     {
         path: "/customer/report-settings",
         component: ReportSettings
@@ -23,6 +23,6 @@ export const portalRoutes = [
     {
         path: "/",
         redirect: true,
-        to: "/customer/users"
+        to: "/customer/dashboard"
     },
 ];

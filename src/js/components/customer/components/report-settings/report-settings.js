@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { FormLayout, TextField, Card, Button } from '@shopify/polaris';
-import SelectShopify from '../select/select';
+import { Select } from '@shopify/polaris';
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
+import { apiServices } from 'js/services';
+
 
 
 // import "./report-settings.css"
 
 export const ReportSettings = () => {
     let [state, setState] = useState({});
+    let [errors, setErrors] = useState({});
+    let [confirm_message, setConfirmMessage] = useState({});
+
 
     const weekly_days_lookups = [
         { label: 'Monday', value: 'monday' },
@@ -19,6 +24,13 @@ export const ReportSettings = () => {
         { label: 'Saturday', value: 'saturday' },
         { label: 'Sunday', value: 'sunday' },
     ];
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        apiServices.reportSettings(state)
+            .then((response) => { setConfirmMessage(response) })
+            .catch((err) => setErrors(err));
+    }
 
     console.log('state+++++++', state)
     return (
@@ -35,17 +47,18 @@ export const ReportSettings = () => {
                             onChange={(e) => setState({ ...state, 'email': e })}
                             value={state.email ? state.email : ''}
                         />
-                                                   <span className="label-tag">Weekly reports</span>
+                        <span className="label-tag">Weekly reports</span>
 
                         <div className="split">
-                            <SelectShopify
-                                callBack={(value, key) => setState({ ...state, [key]: value })}
-                                key_name="daily_report_day"
+                            <Select
+                                placeholder="Day"
                                 options={weekly_days_lookups}
-                                />
-                              
-                            <div className="select-box-align time-pick-align"   >
-                                <TimePicker  
+                                onChange={(e) => setState({ ...state, 'daily_report_day': e })}
+                                value={state.daily_report_day ? state.daily_report_day : ''}
+                            />
+                            <div className="select-box-align time-pick-align">
+                                <TimePicker
+                                    placeholder="Select a time"
                                     showSecond={false}
                                     className="react-time-select"
                                     use12Hours
@@ -56,8 +69,8 @@ export const ReportSettings = () => {
                         </div>
                         <div className="select-box-align">
                             <label>Daily</label>
-
                             <TimePicker
+                                placeholder="Select a time"
                                 showSecond={false}
                                 className="react-time-select"
                                 use12Hours
@@ -69,17 +82,22 @@ export const ReportSettings = () => {
                         <div className="select-box-align">
                             <label>Monthly</label>
                             <TimePicker
+                                placeholder="Select a time"
                                 showSecond={false}
                                 className="react-time-select"
                                 use12Hours
                                 inputReadOnly
                                 onChange={(e) => setState({ ...state, 'monthly_time': e })}
-
                             />
                         </div>
                     </FormLayout>
                 </div>
-                <Button textAlign="center" >Save</Button>
+                <Button
+                    textAlign="center"
+                    onClick={(e) => onSubmit(e)}
+                >
+                    Save
+                </Button>
             </Card>
 
         </div>
