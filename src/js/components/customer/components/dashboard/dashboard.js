@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import CardComponent from 'js/components/customer/components/card/card';
 import { GraphComponent } from './graph-component';
-import TimePicker from 'rc-time-picker';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import classnames from 'classnames';
+import moment from 'moment';
 
 import { Card } from '@shopify/polaris';
 import img1 from './images/result.png';
@@ -43,16 +46,21 @@ export const Dashboard = (props) => {
             </div>
             <div className="dashboard-filter">
             </div>
-                <TimePicker 
-                    placeholder="Select a time"
-                    showSecond={false}
-                    className="react-time-select"
-                    use12Hours
-                    inputReadOnly
-                    onChange={(e) => setState({ ...state, 'weekly_time': e })}
-                / >
-           
-
+            <div className="dash-date">
+            <DatePicker
+                                className={classnames('form-control react-dob-input')}
+                                // selected={selectedDate.selected_date ? moment(selectedDate.selected_date).toDate() : null}
+                                // onChange={(e) => {
+                                //     setSelectedDate({ ...selectedDate, 'selected_date': e });
+                                //     getArchiveData();
+                                // }
+                                // }
+                                maxDate={new Date()}
+                                showYearDropdown
+                                placeholderText='Select A Date'
+                />
+                </div>
+     
 
             <div className="home-graph">
                 <Card>

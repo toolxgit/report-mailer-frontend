@@ -13,11 +13,10 @@
     padding-top: 2vw;
     margin-bottom: 3vw;
 }
-.rc-time-picker{
-    text-align: right ;
-}
-.react-time-select .rc-time-picker-input {
-    text-align: right;
+.dash-date{
+text-align: right;
+margin-right: 3vw;
+
 }
 .Polaris-Card__Section{
     background-color: rgb(255, 255, 255);
@@ -28,9 +27,7 @@
     {
         padding-top: 3vw;
     }
-    .react-time-select .rc-time-picker-input {
-        margin-top: 4vw;
-    }
+  
 
 }
 
@@ -40,18 +37,7 @@
     {
         margin-top: 6vw;
     }
-    .rc-time-picker{
-        text-align: left;
-     
-    }
-    .react-time-select .rc-time-picker-input {
-        margin-top: 4vw;
-    }
-    .react-time-select .rc-time-picker-input {
-        width: 32vw !important;
-        height: 37px !important;
-        font-size: 3.8vw !important;
-    }
+
 
 
 
@@ -66,17 +52,7 @@
     .dashboard-filter{
         padding-top: 4vw;
     }
-    .rc-time-picker{
-        text-align: left;
-    }
-    .react-time-select .rc-time-picker-input {
-        margin-top: 4vw;
-    }
-    .react-time-select .rc-time-picker-input {
-        width: 32vw !important;
-        height: 37px !important;
-        font-size: 3.8vw !important;
-    }
+ 
 
 }
 @media only screen and (max-width: 600px) 
@@ -85,14 +61,7 @@
     {
         padding-top: 7vw;
     }
-    .rc-time-picker{
-        text-align: left;
-    }
-    .react-time-select .rc-time-picker-input {
-        width: 32vw !important;
-        height: 37px !important;
-        font-size: 3.8vw !important;
-    }
+    
 
     .dashboard-filter{
         padding-top: 8vw;
