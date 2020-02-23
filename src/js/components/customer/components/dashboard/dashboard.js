@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import CardComponent from 'js/components/customer/components/card/card';
 import { GraphComponent } from './graph-component';
+import TimePicker from 'rc-time-picker';
+
 import { Card } from '@shopify/polaris';
-import SelectExample from 'js/components/customer/components/select/select';
 import img1 from './images/result.png';
 import img2 from './images/report.png';
 import img3 from './images/fast.png';
@@ -41,8 +42,18 @@ export const Dashboard = (props) => {
                 <CardComponent name="Revenue This Month" image={img5} data={state.monthlyRevenue} />
             </div>
             <div className="dashboard-filter">
-                <SelectExample />
             </div>
+                <TimePicker 
+                    placeholder="Select a time"
+                    showSecond={false}
+                    className="react-time-select"
+                    use12Hours
+                    inputReadOnly
+                    onChange={(e) => setState({ ...state, 'weekly_time': e })}
+                / >
+           
+
+
             <div className="home-graph">
                 <Card>
                     <GraphComponent />
