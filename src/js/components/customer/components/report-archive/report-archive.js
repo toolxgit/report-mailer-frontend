@@ -57,6 +57,8 @@ export const ReportArchive = (props) => {
                                         className="alignment1"
                                         style={{ borderRadius: "0vw", backgroundColor: "white" }}
                                     >
+                                         <p style={{ fontWeight: "bolder",color:"white" }}>.</p>
+
                                         <p style={{ fontWeight: "bolder" }}>Quantity</p>
                                         <p style={{ fontWeight: "bolder" }}>Price</p>
                                     </div>
