@@ -4,7 +4,11 @@ import { Select } from '@shopify/polaris';
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import { apiServices } from 'js/services';
+import { omit, find } from 'lodash';
 import moment from 'moment';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+
 
 
 export const ReportSettings = () => {
@@ -25,7 +29,12 @@ export const ReportSettings = () => {
 
     useEffect(() => {
         apiServices.getReportSettings().then((response) => {
-            setState({ ...response });
+            setState({
+                ...response,
+                weekly_time: response.weekly_time ? moment(response.weekly_time, 'H:m') : null,
+                daily_time: response.daily_time ? moment(response.daily_time, 'H:m') : null,
+                monthly_time: response.monthly_time ? moment(response.monthly_time, 'H:m') : null
+            });
         }).catch((err) => setErrors(err));
     }, []);
 
@@ -39,8 +48,12 @@ export const ReportSettings = () => {
             monthly_time: state.monthly_time ? state.monthly_time.format('H:m') : '',
         }
 
-        apiServices.updateReportSettings(details)
-            .then((response) => { setConfirmMessage(response) })
+        apiServices.updateReportSettings({ ...omit(details, 'message', 'success') })
+            .then((response) => {
+                setConfirmMessage(response);
+                toast.success('Updated Successfully');
+
+            })
             .catch((err) => setErrors(err));
     }
 
@@ -76,6 +89,7 @@ export const ReportSettings = () => {
                                     use12Hours
                                     inputReadOnly
                                     onChange={(e) => setState({ ...state, 'weekly_time': e })}
+                                    value={state.weekly_time}
                                 />
                             </div>
                         </div>
@@ -88,7 +102,7 @@ export const ReportSettings = () => {
                                 use12Hours
                                 inputReadOnly
                                 onChange={(e) => setState({ ...state, 'daily_time': e })}
-
+                                value={state.daily_time}
                             />
                         </div>
                         <div className="select-box-align">
@@ -100,6 +114,7 @@ export const ReportSettings = () => {
                                 use12Hours
                                 inputReadOnly
                                 onChange={(e) => setState({ ...state, 'monthly_time': e })}
+                                value={state.monthly_time}
                             />
                         </div>
                     </FormLayout>

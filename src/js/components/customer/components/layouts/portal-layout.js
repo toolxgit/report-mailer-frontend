@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 //import { Spinner } from 'reactstrap';
 import { SideBar } from "js/components/customer/components/layouts/components/sidebar";
 import { Header } from "js/components/customer/components/layouts/components/header";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { authActions } from 'js/actions';
 
@@ -34,6 +36,17 @@ const PortalLayout = (props) => {
                         <SideBar />
                         <div className="global-content">
                             <Header />
+                            <ToastContainer
+                                autoClose={2000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnVisibilityChange
+                                draggable
+                                pauseOnHover
+                                position="top-right"
+                            />
                             <div className="global-datawrap flex-grow-1 d-flex flex-column">
                                 <div className="global-datawrap__inner">
                                     {switchRoutes}
@@ -54,7 +67,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     getToken: () => dispatch(authActions.getToken()),
-    getLookups: () => dispatch(authActions.lookups())
 });
 
 const connectedPortalLayout = connect(mapStateToProps, mapDispatchToProps)(PortalLayout);

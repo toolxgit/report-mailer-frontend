@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Page, Layout, TextStyle } from '@shopify/polaris';
 import revenue from "./images/revenue.png";
 import sale from "./images/sale.png";
@@ -19,9 +19,19 @@ export const ReportArchive = (props) => {
     const [state, setState] = useState({});
     const [errors, setErrors] = useState({});
 
+    useEffect(() => {
+        apiServices.getReportArchive()
+            .then((response) => {
+                console.log('response++++++++++', response)
+                setState(response);
+            })
+            .catch((err) => setErrors(err));
+    }, [])
+
     const getArchiveData = () => {
         apiServices.getReportArchive({ ...state })
             .then((response) => {
+                console.log('response data+++++++', response)
                 setState(response);
             })
             .catch((err) => {
@@ -57,21 +67,10 @@ export const ReportArchive = (props) => {
                                         className="alignment1"
                                         style={{ borderRadius: "0vw", backgroundColor: "white" }}
                                     >
-                                         <p style={{ fontWeight: "bolder",color:"white" }}>.</p>
+                                        <p style={{ fontWeight: "bolder", color: "white" }}>.</p>
 
                                         <p style={{ fontWeight: "bolder" }}>Quantity</p>
                                         <p style={{ fontWeight: "bolder" }}>Price</p>
-                                    </div>
-                                    <div className="alignment1">
-                                        <div className="img-container"><img src={revenue} alt="" /></div>
-                                        <h2 >Revenue</h2>
-                                        <p>280</p>
-                                        <p>$812</p>
-                                    </div>
-                                    <div className="inner-content">
-                                        <li>week: $239.00<TextStyle variation="subdued"> (Same week last year: $435.00)</TextStyle> </li>
-                                        <li>month:$239.00 $435.00(Same month last year)</li>
-                                        <li>year:$239.00 $435.00(last year)</li>
                                     </div>
                                     <div className="alignment1">
                                         <div className="img-container"><img className="sale-img" src={sale} alt="" /></div>
@@ -83,6 +82,17 @@ export const ReportArchive = (props) => {
                                         <li>week:$239.00     $435.00(Same week last year)</li>
                                         <li>month:$239.00 $435.00(Same month last year)</li>
                                         <li>year:$239.00 $435.00(Same year last year)</li>
+                                    </div>
+                                    <div className="alignment1">
+                                        <div className="img-container"><img src={revenue} alt="" /></div>
+                                        <h2 >Revenue</h2>
+                                        <p>280</p>
+                                        <p>$812</p>
+                                    </div>
+                                    <div className="inner-content">
+                                        <li>week: $239.00<TextStyle variation="subdued"> (Same week last year: $435.00)</TextStyle> </li>
+                                        <li>month:$239.00 $435.00(Same month last year)</li>
+                                        <li>year:$239.00 $435.00(last year)</li>
                                     </div>
                                 </div>
                             </div>

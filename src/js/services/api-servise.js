@@ -4,7 +4,8 @@ export const apiServices = {
     getDashboard,
     updateReportSettings,
     getReportSettings,
-    getReportArchive
+    getReportArchive,
+    getChartData
 };
 
 function getDashboard() {
@@ -16,9 +17,18 @@ function getDashboard() {
     });
 }
 
+function getChartData() {
+    return request({
+        method: 'GET',
+        url: 'get-chart-data',
+        is_authenticated: true,
+        content_type: 'json',
+    });
+}
+
 function updateReportSettings(params) {
     return request({
-        method: 'POST',
+        method: 'PUT',
         url: 'send-mail',
         content_type: 'json',
         param: params,
@@ -38,7 +48,7 @@ function getReportSettings() {
 function getReportArchive(params) {
     return request({
         method: 'GET',
-        url: 'send-mail',
+        url: 'get-revenue',
         content_type: 'json',
         param: params
     });
