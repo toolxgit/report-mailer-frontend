@@ -15,12 +15,12 @@ import { apiServices } from 'js/services';
 export const ReportArchive = (props) => {
     //let [state, setState] = useState({ day: '', month: '', year: '' });
 
-    const [selectedDate, setSelectedDate] = useState({});
+    const [date, setSelectedDate] = useState({});
     const [state, setState] = useState({});
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
-        apiServices.getReportArchive()
+        apiServices.getReportArchive({ date: moment().format('DD-MM-YYYY') })
             .then((response) => {
                 console.log('response++++++++++', response)
                 setState(response);
@@ -28,8 +28,8 @@ export const ReportArchive = (props) => {
             .catch((err) => setErrors(err));
     }, [])
 
-    const getArchiveData = () => {
-        apiServices.getReportArchive({ ...state })
+    const getArchiveData = (e) => {
+        apiServices.getReportArchive({ date: moment(e).format('DD-MM-YYYY') })
             .then((response) => {
                 console.log('response data+++++++', response)
                 setState(response);
@@ -47,10 +47,10 @@ export const ReportArchive = (props) => {
                         <div className='custom-react-select'>
                             <DatePicker
                                 className={classnames('form-control react-dob-input')}
-                                selected={selectedDate.selected_date ? moment(selectedDate.selected_date).toDate() : null}
+                                selected={date.selected_date ? moment(date.selected_date).toDate() : moment().toDate()}
                                 onChange={(e) => {
-                                    setSelectedDate({ ...selectedDate, 'selected_date': e });
-                                    getArchiveData();
+                                    setSelectedDate({ ...date, 'selected_date': e });
+                                    getArchiveData(e);
                                 }
                                 }
                                 maxDate={new Date()}
@@ -69,30 +69,40 @@ export const ReportArchive = (props) => {
                                     >
                                         <p style={{ fontWeight: "bolder", color: "white" }}>.</p>
 
-                                        <p style={{ fontWeight: "bolder" }}>Quantity</p>
+                                        <p style={{ fontWeight: "bolder" }}></p>
                                         <p style={{ fontWeight: "bolder" }}>Price</p>
-                                    </div>
-                                    <div className="alignment1">
-                                        <div className="img-container"><img className="sale-img" src={sale} alt="" /></div>
-                                        <h2 >Sales</h2>
-                                        <p>280</p>
-                                        <p>$812</p>
-                                    </div>
-                                    <div className="inner-content">
-                                        <li>week:$239.00     $435.00(Same week last year)</li>
-                                        <li>month:$239.00 $435.00(Same month last year)</li>
-                                        <li>year:$239.00 $435.00(Same year last year)</li>
                                     </div>
                                     <div className="alignment1">
                                         <div className="img-container"><img src={revenue} alt="" /></div>
                                         <h2 >Revenue</h2>
-                                        <p>280</p>
-                                        <p>$812</p>
+                                        <p>-</p>
+                                        <p>{state.dayPurchaseRevenue ? `$${state.dayPurchaseRevenue}` : ''}</p>
                                     </div>
                                     <div className="inner-content">
-                                        <li>week: $239.00<TextStyle variation="subdued"> (Same week last year: $435.00)</TextStyle> </li>
-                                        <li>month:$239.00 $435.00(Same month last year)</li>
-                                        <li>year:$239.00 $435.00(last year)</li>
+                                        {/* <li>week: {state.weekPurchaseRevenue ? state.weekPurchaseRevenue : ''}<TextStyle variation="subdued"> (Same week last year: {state.lastWeekRevenue ? state.lastWeekRevenue : ''})</TextStyle> </li> */}
+                                        <li>month: {state.monthPurchaseRevenue ? `$${state.monthPurchaseRevenue}` : ''} (Same month last year: {state.lastMonthRevenue ? `$${state.lastMonthRevenue}` : ''})</li>
+                                        <li>Year: {state.yearPurchaseRevenue ? `$${state.yearPurchaseRevenue}` : ''} (last year: {state.lastYearRevenue ? `$${state.lastYearRevenue}` : ''})</li>
+                                    </div>
+                                    <div
+                                        className="alignment1"
+                                        style={{ borderRadius: "0vw", backgroundColor: "white" }}
+                                    >
+                                        <p style={{ fontWeight: "bolder", color: "white" }}>.</p>
+                                        <p style={{ fontWeight: "bolder" }}></p>
+                                        <p style={{ fontWeight: "bolder" }}>Quantity</p>
+
+                                    </div>
+                                    <div className="alignment1">
+                                        <div className="img-container"><img className="sale-img" src={sale} alt="" /></div>
+                                        <h2>Orders</h2>
+                                        <p>-</p>
+                                        <p>{state.dayPurchaseCount ? state.dayPurchaseCount : ''}</p>
+
+                                    </div>
+                                    <div className="inner-content">
+                                        {/* <li>week: {state.weekPurchaseCount ? state.weekPurchaseCount : ''} (Same week last year: {state.lastWeekCount ? state.lastWeekCount : ''})</li> */}
+                                        <li>month: {state.monthPurchaseCount ? state.monthPurchaseCount : ''} (Same month last year: {state.lastMonthCount ? state.lastMonthCount : ''})</li>
+                                        <li>year: {state.yearPurchaseCount ? state.yearPurchaseCount : ''} (last year: {state.lastYearCount ? state.lastYearCount : ''})</li>
                                     </div>
                                 </div>
                             </div>
